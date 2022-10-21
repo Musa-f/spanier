@@ -3,13 +3,29 @@ $linkstyle = "<link rel='stylesheet' href='style-catalogue.css'>";
 include 'header.php'; ?>
 
 <?php
-//require 'db.class.php';
-$DB = new PDO('mysql:host=localhost;dbname=spanier', 'root', '');
-$req = $DB->query('SELECT * FROM produits');
-var_dump($req->fetchAll());
+require 'db.class.php';
 ?>
         <section>
+            <?php $produits = $DB->query('SELECT * FROM produits'); ?>
+            <?php foreach($produits as $produit): ?>
+                <div class="container">
+                <div class="img-aliments"><img src="produits\gouda.png" alt="gouda"></div>
+                <div class="container-child">
+                    <h3>Gouda</h3>
+                    <div class="affiche">
+                        <strong class="prix" id="">
+                            <?php echo $produit->name;?>
+                        </strong> 
+                        <span>€</span>
+                    </div>
+                    <button>+</button>
+                </div>
+            </div>
+            <?php endforeach?>
 
+            
+            
+            <!--
             <div class="container">
                 <div class="img-aliments"><img src="produits\gouda.png" alt="gouda"></div>
                 <div class="container-child">
@@ -18,7 +34,7 @@ var_dump($req->fetchAll());
                     <button>+</button>
                 </div>
             </div>
-
+            
             <div class="container">
                 <div class="img-aliments"><img src="produits\chevre.png" alt="chevre"></div>
                 <div class="container-child">
@@ -62,7 +78,7 @@ var_dump($req->fetchAll());
                     <div class="affiche"><strong class="prix" id="">3</strong> <span>€</span></div>
                     <button>+</button>
                 </div>
-            </div>
+            </div>-->
         </section>
 
 
