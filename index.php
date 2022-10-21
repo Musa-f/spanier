@@ -3,8 +3,6 @@ $linkstyle = "<link rel='stylesheet' href='style-catalogue.css'>";
 include 'header.php'; ?>
 
 <?php
-/*$query = 'SELECT * FROM produits';
-$req = $DB->db->prepare($query);*/
 $req = $DB->db->prepare('SELECT * FROM produits'); //requête enregistrée dans une variable
 $req->execute(); //exécution de la requête
 var_dump($req->fetchAll()); //récupère le résultat
