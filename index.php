@@ -11,10 +11,10 @@ require 'db.class.php';
                 <div class="container">
                 <div class="img-aliments"><img src="produits\gouda.png" alt="gouda"></div>
                 <div class="container-child">
-                    <h3>Gouda</h3>
+                    <h3>gouda</h3>
                     <div class="affiche">
                         <strong class="prix" id="">
-                            <?php echo $produit->name;?>
+                            <?php echo $produit->price; ?>
                         </strong> 
                         <span>€</span>
                     </div>
