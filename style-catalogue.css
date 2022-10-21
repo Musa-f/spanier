@@ -9,7 +9,8 @@ section{
     display: grid;
     grid-template-rows: 90% 10%;
     text-align: center;
-    border: solid 2px red;
+    border: solid 2px black;
+    border-radius: 4%;
     margin: 2%;
 }
 
@@ -30,7 +31,7 @@ h3{
     margin-top: 10%;
 }
 
-button{
+.ajout{
     grid-column: 3;
     width: 50px;
     height: 50px;

@@ -15,7 +15,7 @@ include 'header.php'; ?>
                         </strong> 
                         <span>€</span>
                     </div>
-                    <button><a href="addpanier.php?id=<?php echo $produit[0];?>">+</a></button>
+                    <a href="addpanier.php?id=<?php echo $produit[0];?>"><img src="reseaux\panier.png" alt="" class="ajout"></a>
                 </div>
             </div>
             <?php endforeach?>
