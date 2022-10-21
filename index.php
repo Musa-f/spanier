@@ -9,12 +9,12 @@ require 'db.class.php';
             <?php $produits = $DB->query('SELECT * FROM produits'); ?>
             <?php foreach($produits as $produit): ?>
                 <div class="container">
-                <div class="img-aliments"><img src="produits\gouda.png" alt="gouda"></div>
+                <div class="img-aliments"><img src="produits\<?php echo $produit[0];?>.png" alt="<?php echo $produit[1];?>"></div>
                 <div class="container-child">
-                    <h3>gouda</h3>
+                    <h3><?php echo $produit[1];?></h3>
                     <div class="affiche">
                         <strong class="prix" id="">
-                            <?php echo $produit->price; ?>
+                            <?php echo $produit[2];?>
                         </strong> 
                         <span>€</span>
                     </div>
