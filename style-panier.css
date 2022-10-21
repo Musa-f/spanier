@@ -1,0 +1,15 @@
+section{
+    margin: 5%;
+}
+
+table{
+    width: 100%;
+}
+
+th, td{
+    border-bottom: solid black 2px;
+}
+
+.mini{
+    width: 300px;
+}
