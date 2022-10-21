@@ -1,6 +1,8 @@
 <?php
 
-class DB{
+$DB = new PDO('mysql:host=localhost;dbname=spanier', 'root', '');
+
+/*class DB{
     private $host = 'localhost';
     private $username = 'root';
     private $password = '';
@@ -16,4 +18,9 @@ class DB{
         }
         $db = new PDO('mysql:host='.$this->host.'; dbname='.$this->database, $this->username, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8'));
     }
-}
+}*/
+
+?>
+
+
+
