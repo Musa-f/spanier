@@ -1,7 +1,3 @@
-<?php
-//require 'db.class.php';
-//$DB = new DB();
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

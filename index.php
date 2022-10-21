@@ -3,12 +3,10 @@ $linkstyle = "<link rel='stylesheet' href='style-catalogue.css'>";
 include 'header.php'; ?>
 
 <?php
-require 'db.class.php';
+//require 'db.class.php';
+$DB = new PDO('mysql:host=localhost;dbname=spanier', 'root', '');
 $req = $DB->query('SELECT * FROM produits');
 var_dump($req->fetchAll());
-//$req = $DB->db->prepare('SELECT * FROM produits'); //requête enregistrée dans une variable
-//$req->execute(); //exécution de la requête
-//var_dump($req->fetchAll()); //récupère le résultat
 ?>
         <section>
 
