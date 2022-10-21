@@ -1,12 +1,10 @@
 <?php 
+session_start();
+include_once "config.php";
 $linkstyle = "<link rel='stylesheet' href='style-panier.css'>";
 include 'header.php'; ?>
 
 <section>
-    <?php
-    $ids = array_keys($_SESSION['panier']);
-    //$products = $DB->query('SELECT * FROM produits WHERE id IN implode($ids)');
-    ?>
 
     <table>
         <tr>
@@ -16,14 +14,27 @@ include 'header.php'; ?>
             <th>Quantité</th>
             <th>Action</th>
         </tr>
-        <!--Ajouts de produits-->
-        <tr> 
-            <td><img src="" alt="" class="mini"></td>
-            <td>Gouda</td>
-            <td>5€</td>
-            <td>2</td>
-            <td><img src="" alt=""></td>
-        </tr>
+        <?php
+        $ids = array_keys($_SESSION['panier']);
+        if(empty($ids)){
+            echo"Votre panier est vide";
+        }else {
+            $products = mysqli_query($bdd, "SELECT * FROM produits WHERE id IN (".implode(',', $ids).")");
+            //$products = mysqli_query($bdd, "SELECT * FROM produits WHERE id IN (\".implode(\',\', $ids).\")");
+            /*$vimp = implode(',', $ids);
+            $products = mysqli_query($bdd, "SELECT * FROM produits WHERE Id IN {$vimp}");*/
+
+            foreach($products as $product):
+            ?>
+            <!--Ajouts de produits-->
+            <tr> 
+                <td><img src="produits/<?=$product['img']?>" alt="" class="mini"></td>
+                <td><?=$product['name']?></td>
+                <td><?=$product['price']?></td>
+                <td><?=$_SESSION['panier'][$product['id']]?></td>
+                <td><img src="" alt=""></td>
+            </tr>
+        <?php endforeach ;} ?>
         <tr>
             <th>Total : 50€</th>
         </tr>
