@@ -1,12 +1,13 @@
 <?php 
+session_start();
 $linkstyle = "<link rel='stylesheet' href='style-catalogue.css'>";
 include 'header.php'; 
 ?>
 
         <section>
             <?php 
-            $req = mysqli_query($bdd, "SELECT * FROM produits");
-            while($produit = mysqli_fetch_assoc($req)){ 
+            $produits = mysqli_query($bdd, "SELECT * FROM produits"); 
+            foreach($produits as $produit):
             ?>
                 <div class="container">
                 <div class="img-aliments"><img src="produits\<?=$produit['img'];?>.png" alt=""></div>
@@ -18,12 +19,10 @@ include 'header.php';
                         </strong> 
                         <span>€</span>
                     </div>
-                    <a href="addpanier.php?id=<?=$produit['Id'];?>"><img src="reseaux\panier.png" alt="" class="ajout"></a>
+                    <a href="addpanier.php?id=<?=$produit['id'];?>"><img src="reseaux\panier.png" alt="" class="ajout"></a>
                 </div>
             </div>
-            <?php }?>
+            <?php endforeach;?>
         </section>
-
-
 
 <?php include 'footer.php'; ?>

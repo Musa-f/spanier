@@ -11,5 +11,14 @@ th, td{
 }
 
 .mini{
-    width: 300px;
+    width: 150px;
+}
+
+th, td, tr{
+    text-align: center;
+}
+
+div{
+    text-align: center;
+    margin: 2%;
 }
