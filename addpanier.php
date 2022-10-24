@@ -15,13 +15,14 @@ if(isset($_GET['id'])){
     if(empty(mysqli_fetch_assoc($product))){
         die("Ce produit n'existe pas");
     }
-}
 
-if(isset($_SESSION['panier']['id'])){
-    $_SESSION['panier'][$id]++;
-}else{
-    $_SESSION['panier'][$id]= 1;
+    if(isset($_SESSION['panier'][$id])){
+        $_SESSION['panier'][$id]++;
+    }else{
+        $_SESSION['panier'][$id]= 1;
+    }
+
+    header("Location:index.php");
 }
-header("Location:index.php");
 
 ?>

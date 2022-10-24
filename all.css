@@ -13,6 +13,15 @@ header{
     grid-template-rows: 80% 10% 10%;
 }
 
+a:link, a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: goldenrod;
+}
+
 .banniere{
     grid-column: 2;
     grid-row: 1;

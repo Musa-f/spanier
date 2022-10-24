@@ -32,6 +32,7 @@ if(isset($_GET['del'])){
             foreach($products as $product):
                 $total = $total + $product['price'] * $_SESSION['panier'][$product['id']];
                 //var_dump($total);
+                //var_dump($_SESSION['panier'][$product['id']]);
             ?>
             <!--Produits-->
             <tr> 
@@ -44,7 +45,7 @@ if(isset($_GET['del'])){
         <?php endforeach ;} ?>
 
         <tr>
-            <th>Total : <?=$total?>€</th>
+            <th class="total">Total : <?=$total?>€</th>
         </tr>
     </table>
 

@@ -6,12 +6,13 @@ table{
     width: 100%;
 }
 
-th, td{
-    border-bottom: solid black 2px;
+td, th{
+    border-bottom: solid black 1.5px;
 }
 
+
 .mini{
-    width: 150px;
+    width: 110px;
 }
 
 th, td, tr{
@@ -20,5 +21,11 @@ th, td, tr{
 
 div{
     text-align: center;
-    margin: 2%;
+
+}
+
+.total{
+    border: none;
+    text-align: start;
+    font-size: 1.5rem;
 }
